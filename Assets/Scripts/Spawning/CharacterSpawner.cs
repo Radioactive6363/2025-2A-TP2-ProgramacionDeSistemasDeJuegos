@@ -1,26 +1,28 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class CharacterSpawner : MonoBehaviour
+public class CharacterSpawner : MonoBehaviour, ICharacterSpawnerServ
 {
-    [SerializeField] private Character prefab;
-    [SerializeField] private CharacterModel characterModel;
-    [SerializeField] private PlayerControllerModel controllerModel;
-    [SerializeField] private RuntimeAnimatorController animatorController;
+    private IUnityFactory _characterFactory;
 
-    public void Spawn()
+    public void Start()
     {
-        var result = Instantiate(prefab, transform.position, transform.rotation);
-        if (!result.TryGetComponent(out Character character))
-            character = result.gameObject.AddComponent<Character>();
-        character.Setup(characterModel);
+        ServiceLocator.Register<ICharacterSpawnerServ>(this);
+    }
 
-        if (!result.TryGetComponent(out PlayerController controller))
-            controller = result.gameObject.AddComponent<PlayerController>();
-        controller.Setup(controllerModel);
+    public void StartService(IUnityFactory characterFactory)
+    {
+        _characterFactory = characterFactory;
+    }
 
-        var animator = result.GetComponentInChildren<Animator>();
-        if (!animator)
-            animator = result.gameObject.AddComponent<Animator>();
-        animator.runtimeAnimatorController = animatorController;
+    public void Spawn(ICharacterSetup config)
+    {
+        if (_characterFactory == null)
+        {
+            Debug.LogError("Error Spawning - Character Factory Missing");
+            return;
+        }
+        _characterFactory.CreateCharacter<ISetup>(config, transform.position, transform.rotation, out GameObject character);
     }
 }
