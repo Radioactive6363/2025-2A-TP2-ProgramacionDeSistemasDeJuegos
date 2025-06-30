@@ -768,7 +768,6 @@ GameObject:
   - component: {fileID: 1990219676}
   - component: {fileID: 1990219675}
   - component: {fileID: 1990219674}
-  - component: {fileID: 1990219678}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -858,21 +857,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1990219678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1990219673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 003aaf1565cdb2f4682dab301b3195df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuConfig: {fileID: 11400000, guid: 41e4acf572f4b264aa45c9d788335e8c, type: 2}
-  buttonPrefab: {fileID: 1864672745202509754, guid: 2f2db00048fd04f49a1752fb7f69027b, type: 3}
-  buttonContainer: {fileID: 1990219677}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

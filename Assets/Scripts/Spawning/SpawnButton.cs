@@ -3,20 +3,20 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SpawnButton : MonoBehaviour
+public class SpawnButton : MonoBehaviour, ISetup<ButtonSpawnerSO>
 {
-    [SerializeField] private TextMeshProUGUI title;
     [SerializeField] private Button button;
+    private TextMeshProUGUI title;
     private ICharacterSetup _character;
     private ICharacterSpawnerServ _spawnerServ; 
 
     private void Reset()
         => button = GetComponent<Button>();
-
-    public void Initialize(ButtonSpawnerSO config)
+    
+    public void Setup(ButtonSpawnerSO model)
     {
-        title.text = config.text;
-        _character = config.characterSetup.Ref;
+        title.text = model.text;
+        _character = model.characterSetup.Ref;
         
         GetComponent<Button>().onClick.AddListener(HandleClick);
     }

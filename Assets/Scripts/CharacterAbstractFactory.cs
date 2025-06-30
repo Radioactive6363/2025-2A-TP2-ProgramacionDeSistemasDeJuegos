@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class CharacterFactory : IUnityFactory
+public class CharacterFactory : ICharacterFactory
 {
     public GameObject CreateCharacter<T>(ICharacterSetup config, Vector3 position, Quaternion rotation, out GameObject character)
     {

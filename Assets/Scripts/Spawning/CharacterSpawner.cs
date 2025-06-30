@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class CharacterSpawner : MonoBehaviour, ICharacterSpawnerServ
 {
-    private IUnityFactory _characterFactory;
+    private ICharacterFactory _characterFactory;
 
     public void Start()
     {
         ServiceLocator.Register<ICharacterSpawnerServ>(this);
     }
 
-    public void StartService(IUnityFactory characterFactory)
+    public void StartService(ICharacterFactory characterFactory)
     {
         _characterFactory = characterFactory;
     }
