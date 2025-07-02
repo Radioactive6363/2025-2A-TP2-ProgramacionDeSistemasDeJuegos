@@ -3,15 +3,16 @@ using UnityEngine;
 public class SetupFactory : ISetupFactory
 {
     /// <summary>
-    /// Crea un GameObject a partir de una configuración (prefab + setups),
-    /// agrega los componentes necesarios si no existen,
-    /// y aplica configuraciones usando los setups correspondientes.
-    /// Abstract Factory de GameObjects.
+    /// Creates a GameObject from a configuration (prefab and configurations),
+    /// adds the necessary components if they don't exist,
+    /// and applies the corresponding configurations.
+    /// Abstract Factory Pattern for GameObjects.
     /// </summary>
     public bool TryCreate(IGameObjectSetup config, Vector3 position, Quaternion rotation, out GameObject gameObject, Transform parent = null)
     {
         var result = Object.Instantiate(config.prefab, position, rotation, parent);
-
+        result.tag = "Character";
+        
         foreach (var setupRef in config.setups)
         {
             var setupInstance = setupRef.Ref;
