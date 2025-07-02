@@ -1,9 +1,13 @@
 using System;
 using UnityEngine;
 
+    /// <summary>
+    /// Allows the Use of Interfaces in Unity Inspector. Principally used for References in the StateFactory,
+    /// allowing to get the specific component that implements the ISetup<T>.
+    /// </summary>
     [System.Serializable]
     public struct InterfaceRef<T> : ISerializationCallbackReceiver
-    {
+    {   
         [SerializeField] private UnityEngine.Object reference;
 
         private UnityEngine.Object _oldreference;

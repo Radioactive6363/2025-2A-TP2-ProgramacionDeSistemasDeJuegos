@@ -21,7 +21,7 @@ public class CharacterSpawner : MonoBehaviour, ICharacterSpawnerServ
     {
         if (_setupFactory == null)
         {
-            Debug.LogError("Error Spawning - Character Factory Missing");
+            Debug.LogError("Error Spawning - Factory Missing");
             return;
         }
         _setupFactory.TryCreate(config, transform.position, transform.rotation, out GameObject character);

@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 
+    /// <summary>
+    /// Provides and Stores "Services" (needed objects or components) to be used by other classes.
+    /// </summary>
 public static class ServiceLocator
 {
     private static readonly Dictionary<Type, object> _services = new();

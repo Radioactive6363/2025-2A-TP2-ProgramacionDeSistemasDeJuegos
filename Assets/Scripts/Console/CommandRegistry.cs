@@ -1,5 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
+/// <summary>
+/// Stores and Handles registered commands via a Dictionary.
+/// </summary>
 
 public class CommandRegistry : ICommandRegistry
 {
@@ -7,6 +10,7 @@ public class CommandRegistry : ICommandRegistry
 
     public void Register(IConsoleCommand command)
     {
+        //Converts to lowercase to avoid inconveniences.
         _commands[command.Name.ToLower()] = command;
         foreach (var alias in command.Aliases)
         {

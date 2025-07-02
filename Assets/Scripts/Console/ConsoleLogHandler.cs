@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/// <summary>
+/// Intermediary between UnityLogHandler and the Custom Console Ingame.
+/// </summary>
+
 public class ConsoleLogHandler : ILogHandler
 {
     private readonly ILogHandler _defaultHandler;

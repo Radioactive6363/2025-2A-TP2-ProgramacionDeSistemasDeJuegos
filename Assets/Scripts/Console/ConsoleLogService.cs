@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/// <summary>
+/// Allows the Initialization of the ConsoleLogHandler and the Detachment in runtime if needed.
+/// </summary>
+
 public class ConsoleLogService : IConsoleLogService
 {
     private bool _initialized = false;

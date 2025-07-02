@@ -1,5 +1,8 @@
 using System.Collections.Generic;
 
+    /// <summary>
+    /// Base interface for all console commands.
+    /// </summary>
 public interface IConsoleCommand
 {
     string Name { get; }
