@@ -4,9 +4,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Spawner/ButtonSpawner")]
 public class ButtonSpawnerSO : ScriptableObject, IGameObjectSetup
 {
-    [SerializeField] private GameObject prefab;
-    [SerializeField] private List<InterfaceRef<ISetup>> setups;
+    [SerializeField] private GameObject _prefab;
+    [SerializeField] private List<InterfaceRef<ISetup>> _setups;
 
-    public GameObject Prefab => prefab;
-    public List<InterfaceRef<ISetup>> Setups => setups;
+    public GameObject prefab => _prefab;
+    public List<InterfaceRef<ISetup>> setups => _setups;
 }

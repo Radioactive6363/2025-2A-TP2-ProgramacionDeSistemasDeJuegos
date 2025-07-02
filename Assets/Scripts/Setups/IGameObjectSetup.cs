@@ -3,6 +3,6 @@ using UnityEngine;
 
 public interface IGameObjectSetup
 {
-    GameObject Prefab { get; }
-    List<InterfaceRef<ISetup>> Setups { get; }
+    GameObject prefab { get; }
+    List<InterfaceRef<ISetup>> setups { get; }
 }
