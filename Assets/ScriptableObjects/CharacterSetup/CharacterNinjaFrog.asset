@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48d990e3f773a214daa4282d41073886, type: 3}
+  m_Name: CharacterNinjaFrog
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 6779143174161877438, guid: b5bfe69065726de4fb7277dbb1fcec73, type: 3}
+  _characterModel:
+  - reference: {fileID: 11400000, guid: f223517428eafb74ab15716875781469, type: 2}
+  - reference: {fileID: 11400000, guid: ca032993e7d069841a7e57b5d5779ddc, type: 2}
+  _animatorController: {fileID: 22100000, guid: 3d2541903ae170d4b94706e606c867a9, type: 2}

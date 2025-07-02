@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48d990e3f773a214daa4282d41073886, type: 3}
+  m_Name: CharacterPinkMan
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 6779143174161877438, guid: b5bfe69065726de4fb7277dbb1fcec73, type: 3}
+  _characterModel:
+  - reference: {fileID: 11400000, guid: 7c09582df76801942a67c7f3d5da43d1, type: 2}
+  - reference: {fileID: 11400000, guid: 0cb44a0bfef2f6647a00b1c9b1b66780, type: 2}
+  _animatorController: {fileID: 22100000, guid: c2c09215dfc727a409dc1c3cfbba9c86, type: 2}

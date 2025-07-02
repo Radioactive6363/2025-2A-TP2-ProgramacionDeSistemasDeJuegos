@@ -1,18 +1,21 @@
-using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SpawnButton : MonoBehaviour
 {
     [SerializeField] private Button button;
+    private ICharacterSetup _character;
+    private ICharacterSpawnerServ _spawnerServ; 
 
     private void Reset()
         => button = GetComponent<Button>();
-
+    
     private void Awake()
     {
         if (!button)
             button = GetComponent<Button>();
+        _spawnerServ = ServiceLocator.Get<ICharacterSpawnerServ>();
     }
 
     private void OnEnable()
@@ -33,7 +36,16 @@ public class SpawnButton : MonoBehaviour
 
     private void HandleClick()
     {
-        var spawner = FindFirstObjectByType<CharacterSpawner>();
-        spawner.Spawn();
+        if (_character == null)
+        {
+            Debug.LogError("Setup is null");
+            return;
+        }
+        _spawnerServ.Spawn(_character);
+    }
+    
+    public void SetCharacter(ICharacterSetup character)
+    {
+        _character = character;
     }
 }
