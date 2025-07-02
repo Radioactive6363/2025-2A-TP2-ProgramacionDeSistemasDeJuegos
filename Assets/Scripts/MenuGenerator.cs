@@ -11,7 +11,7 @@ public class MenuGenerator : MonoBehaviour
 
         foreach (var buttonConfig in menuConfig.buttonSetups)
         {
-            factory.TryCreate<SpawnButton>(buttonConfig, Vector3.zero, Quaternion.identity, out var button, buttonContainer);
+            factory.TryCreate(buttonConfig, Vector3.zero, Quaternion.identity, out var button, buttonContainer);
         }
     }
 }

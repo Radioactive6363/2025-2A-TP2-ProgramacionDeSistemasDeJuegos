@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c7462a2e12195d45b2810858c6584af, type: 3}
-  m_Name: SpawnerButton
+  m_Script: {fileID: 11500000, guid: bd61740b5e1035244b602d163afba429, type: 3}
+  m_Name: ButtonSetupNinjaFrog
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 1864672745202509754, guid: 2f2db00048fd04f49a1752fb7f69027b, type: 3}
-  _setups:
-  - reference: {fileID: 11400000, guid: 3cfb8356810177845873fd4ff5cbd3c6, type: 2}
+  buttonText: Spawn Ninja Frog
+  characterToSpawn:
+    reference: {fileID: 11400000, guid: 216f2e3373b6b0f4988031f0e7272f3a, type: 2}

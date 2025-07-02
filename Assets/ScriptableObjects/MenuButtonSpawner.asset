@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: MenuButtonSpawner
   m_EditorClassIdentifier: 
   buttonSetups:
+  - {fileID: 11400000, guid: 8a24fa61265eea449bdc97f906840357, type: 2}
+  - {fileID: 11400000, guid: 03d9685114f760f45a85799f753b2a77, type: 2}
+  - {fileID: 11400000, guid: f75e5ca7682950541a0e1812068ef319, type: 2}
   - {fileID: 11400000, guid: 2a169508f1b8da248ae590420878e983, type: 2}
