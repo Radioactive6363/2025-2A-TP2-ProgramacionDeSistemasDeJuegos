@@ -1,6 +1,7 @@
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ConsoleManager : MonoBehaviour
 {
@@ -8,19 +9,30 @@ public class ConsoleManager : MonoBehaviour
     [SerializeField] private TMP_Text logText;
     [SerializeField] private GameObject panel;
     public static ConsoleManager Instance { get; private set; }
-    private ICommandRegistry registry;
+    
+    private ICommandRegistry _registry;
+    private ConsoleInputActions _toggleAction;
+    
     private void Start()
     {
         Instance = this;
-        registry = ServiceLocator.Get<ICommandRegistry>();
+        _registry = ServiceLocator.Get<ICommandRegistry>();
         RegisterDefaultCommands();
         panel.SetActive(false);
+        _toggleAction = new ConsoleInputActions();
+        _toggleAction.Enable();
+        _toggleAction.Console.ToggleConsole.performed += ctx => Toggle();
+        _toggleAction.Console.Submit.performed += ctx => OnSubmitCommand();
+    }
+    
+    private void OnEnable()
+    {
+        _toggleAction.Enable();
     }
 
-    private void Update()
+    private void OnDisable()
     {
-        if (Input.GetKeyDown(KeyCode.F1))
-            Toggle();
+        _toggleAction.Disable();
     }
 
     public void Toggle() => panel.SetActive(!panel.activeSelf);
@@ -31,7 +43,7 @@ public class ConsoleManager : MonoBehaviour
         inputField.text = "";
 
         var parts = input.Split(' ');
-        var command = registry.Find(parts[0]);
+        var command = _registry.Find(parts[0]);
         if (command != null)
             command.Execute(parts.Skip(1).ToArray());
         else
@@ -45,8 +57,8 @@ public class ConsoleManager : MonoBehaviour
 
     private void RegisterDefaultCommands()
     {
-        registry.Register(new HelpCommand(registry));
-        registry.Register(new AliasesCommand(registry));
-        registry.Register(new PlayAnimationCommand());
+        _registry.Register(new HelpCommand(_registry));
+        _registry.Register(new AliasesCommand(_registry));
+        _registry.Register(new PlayAnimationCommand());
     }
 }

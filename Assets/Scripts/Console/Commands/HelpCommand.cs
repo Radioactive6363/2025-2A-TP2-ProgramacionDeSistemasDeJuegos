@@ -9,7 +9,7 @@ public class HelpCommand : IConsoleCommand
 
     public string Name => "help";
     public string Description => "Shows Info of Command.";
-    public IEnumerable<string> Aliases => new[] { "?" };
+    public IEnumerable<string> Aliases => new[] { "?", "assistance", "assist", "info" };
 
     public void Execute(string[] args)
     {

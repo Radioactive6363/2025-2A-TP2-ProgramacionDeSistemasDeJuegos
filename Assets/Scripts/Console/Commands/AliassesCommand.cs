@@ -11,14 +11,14 @@ public class AliasesCommand : IConsoleCommand
     }
 
     public string Name => "aliases";
-    public string Description => "Muestra los alias asociados a un comando.";
-    public IEnumerable<string> Aliases => new[] { "alias", "a" };
+    public string Description => "Shows Aliases of Command.";
+    public IEnumerable<string> Aliases => new[] { "alias", "a", "alia" };
 
     public void Execute(string[] args)
     {
         if (args.Length == 0)
         {
-            Debug.Log("Uso: aliases <comando>");
+            Debug.Log("Use: aliases <comando>");
             return;
         }
 
@@ -26,11 +26,11 @@ public class AliasesCommand : IConsoleCommand
         if (command != null)
         {
             var aliasList = string.Join(", ", command.Aliases);
-            Debug.Log($"Alias de '{command.Name}': {aliasList}");
+            Debug.Log($"Alias of '{command.Name}': {aliasList}");
         }
         else
         {
-            Debug.Log($"Comando '{args[0]}' no encontrado.");
+            Debug.Log($"Command '{args[0]}' not Found.");
         }
     }
 }

@@ -5,7 +5,7 @@ public class PlayAnimationCommand : IConsoleCommand
 {
     public string Name => "playanimation";
     public string Description => "Plays Animations on All Characters.";
-    public IEnumerable<string> Aliases => new[] { "anim", "pa" };
+    public IEnumerable<string> Aliases => new[] { "anim", "pa", "playanim", "startanim", "playanims", "startanims" };
 
     public void Execute(string[] args)
     {
@@ -20,7 +20,7 @@ public class PlayAnimationCommand : IConsoleCommand
 
         foreach (var c in characters)
         {
-            var anim = c.GetComponent<Animator>();
+            var anim = c.GetComponentInChildren<Animator>();
             if (anim != null)
                 anim.Play(name);
         }
