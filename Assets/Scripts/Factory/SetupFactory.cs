@@ -10,10 +10,10 @@ public class SetupFactory : ISetupFactory
     /// </summary>
     public bool TryCreate(IGameObjectSetup config, Vector3 position, Quaternion rotation, out GameObject gameObject, Transform parent = null)
     {
-        var result = Object.Instantiate(config.prefab, position, rotation, parent);
+        var result = Object.Instantiate(config.Prefab, position, rotation, parent);
         result.tag = "Character";
         
-        foreach (var setupRef in config.setups)
+        foreach (var setupRef in config.Setups)
         {
             var setupInstance = setupRef.Ref;
             if (setupInstance == null)
@@ -44,7 +44,7 @@ public class SetupFactory : ISetupFactory
             if (!animator)
                 animator = result.AddComponent<Animator>();
 
-            animator.runtimeAnimatorController = characterSetup.animatorController;
+            animator.runtimeAnimatorController = characterSetup.AnimatorController;
         }
 
         gameObject = result;

@@ -4,11 +4,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CharacterSetup", menuName = "CharacterSetup")]
 public class CharacterSetupSO : ScriptableObject, ICharacterSetup
 {
-    [SerializeField] private GameObject _prefab;
-    [SerializeField] private List<InterfaceRef<ISetup>> _characterModel;
-    [SerializeField] private RuntimeAnimatorController _animatorController;
+    [SerializeField] private GameObject prefab;
+    [SerializeField] private List<InterfaceRef<ISetup>> characterModel;
+    [SerializeField] private RuntimeAnimatorController animatorController;
 
-    public GameObject prefab => _prefab;
-    public List<InterfaceRef<ISetup>> setups => _characterModel;
-    public RuntimeAnimatorController animatorController => _animatorController;
+    public GameObject Prefab => prefab;
+    public List<InterfaceRef<ISetup>> Setups => characterModel;
+    public RuntimeAnimatorController AnimatorController => animatorController;
 }

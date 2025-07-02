@@ -3,5 +3,5 @@ using UnityEngine;
 
 public interface ICharacterSetup : IGameObjectSetup
 {
-    RuntimeAnimatorController animatorController { get; }
+    RuntimeAnimatorController AnimatorController { get; }
 }
