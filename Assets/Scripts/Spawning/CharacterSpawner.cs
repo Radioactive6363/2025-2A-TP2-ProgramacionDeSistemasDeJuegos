@@ -4,25 +4,26 @@ using UnityEngine;
 
 public class CharacterSpawner : MonoBehaviour, ICharacterSpawnerServ
 {
-    private ICharacterFactory _characterFactory;
+    private ISetupFactory _setupFactory;
 
-    public void Start()
+    public void Awake()
     {
         ServiceLocator.Register<ICharacterSpawnerServ>(this);
+        StartService(ServiceLocator.Get<ISetupFactory>());
     }
-
-    public void StartService(ICharacterFactory characterFactory)
+    
+    public void StartService(ISetupFactory setupFactory)
     {
-        _characterFactory = characterFactory;
+        _setupFactory = setupFactory;
     }
 
     public void Spawn(ICharacterSetup config)
     {
-        if (_characterFactory == null)
+        if (_setupFactory == null)
         {
             Debug.LogError("Error Spawning - Character Factory Missing");
             return;
         }
-        _characterFactory.CreateCharacter<ISetup>(config, transform.position, transform.rotation, out GameObject character);
+        _setupFactory.TryCreate<ISetup>(config, transform.position, transform.rotation, out GameObject character);
     }
 }

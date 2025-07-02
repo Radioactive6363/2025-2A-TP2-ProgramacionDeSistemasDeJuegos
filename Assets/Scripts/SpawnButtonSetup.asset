@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c7462a2e12195d45b2810858c6584af, type: 3}
-  m_Name: SpawnerButton1
+  m_Script: {fileID: 11500000, guid: bd61740b5e1035244b602d163afba429, type: 3}
+  m_Name: SpawnButtonSetup
   m_EditorClassIdentifier: 
-  text: 
-  characterSetup:
-    reference: {fileID: 11400000, guid: 216f2e3373b6b0f4988031f0e7272f3a, type: 2}
+  buttonText: Text1
+  characterToSpawn:
+    reference: {fileID: 11400000, guid: bda852bf3518ef640b7900410d4b6ed6, type: 2}

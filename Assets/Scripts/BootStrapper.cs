@@ -5,12 +5,12 @@ public class Bootstrapper : MonoBehaviour
 {
     private void Awake()
     {
-        ServiceLocator.Register<ICharacterFactory>(new CharacterFactory());
+        ServiceLocator.Register<ISetupFactory>(new SetupFactory());
         
     }
 
     private void OnDestroy()
     {
-        ServiceLocator.Unregister<ICharacterFactory>();
+        ServiceLocator.Unregister<ISetupFactory>();
     }
 }

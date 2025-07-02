@@ -1,9 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "SpawnerButton")]
-public class ButtonSpawnerSO : ScriptableObject
+[CreateAssetMenu(menuName = "Spawner/ButtonSpawner")]
+public class ButtonSpawnerSO : ScriptableObject, IGameObjectSetup
 {
-    public string text;
-    public InterfaceRef<ICharacterSetup> characterSetup;
-}
+    [SerializeField] private GameObject _prefab;
+    [SerializeField] private List<InterfaceRef<ISetup>> _setups;
 
+    public GameObject prefab => _prefab;
+    public List<InterfaceRef<ISetup>> setups => _setups;
+}

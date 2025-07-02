@@ -2,6 +2,6 @@ using UnityEngine;
 
 public interface ICharacterSpawnerServ
 {
-    void StartService(ICharacterFactory characterFactory);
+    void StartService(ISetupFactory setupFactory);
     void Spawn(ICharacterSetup config);
 }

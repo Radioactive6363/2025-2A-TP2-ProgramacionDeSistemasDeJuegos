@@ -1,25 +1,15 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SpawnButton : MonoBehaviour, ISetup<ButtonSpawnerSO>
+public class SpawnButton : MonoBehaviour
 {
     [SerializeField] private Button button;
-    private TextMeshProUGUI title;
     private ICharacterSetup _character;
     private ICharacterSpawnerServ _spawnerServ; 
 
     private void Reset()
         => button = GetComponent<Button>();
-    
-    public void Setup(ButtonSpawnerSO model)
-    {
-        title.text = model.text;
-        _character = model.characterSetup.Ref;
-        
-        GetComponent<Button>().onClick.AddListener(HandleClick);
-    }
     
     private void Awake()
     {
@@ -52,5 +42,10 @@ public class SpawnButton : MonoBehaviour, ISetup<ButtonSpawnerSO>
             return;
         }
         _spawnerServ.Spawn(_character);
+    }
+    
+    public void SetCharacter(ICharacterSetup character)
+    {
+        _character = character;
     }
 }

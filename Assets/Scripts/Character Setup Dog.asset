@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48d990e3f773a214daa4282d41073886, type: 3}
-  m_Name: CharacterSetup
+  m_Name: Character Setup Dog
   m_EditorClassIdentifier: 
   _prefab: {fileID: 6779143174161877438, guid: b5bfe69065726de4fb7277dbb1fcec73, type: 3}
   _characterModel:
