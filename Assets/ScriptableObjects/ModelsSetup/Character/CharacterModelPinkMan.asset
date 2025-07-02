@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7158b8fe8810e3b43ba8cd4bf76e7e1d, type: 3}
-  m_Name: CharacterModelSetup
+  m_Name: CharacterModelPinkMan
   m_EditorClassIdentifier: 
   model:
-    <Acceleration>k__BackingField: 5
-    <Speed>k__BackingField: 4
-    <JumpForce>k__BackingField: 5
+    <Acceleration>k__BackingField: 4
+    <Speed>k__BackingField: 7
+    <JumpForce>k__BackingField: 9

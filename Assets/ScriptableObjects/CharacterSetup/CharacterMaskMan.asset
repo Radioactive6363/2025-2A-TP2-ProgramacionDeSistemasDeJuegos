@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 6779143174161877438, guid: b5bfe69065726de4fb7277dbb1fcec73, type: 3}
   _characterModel:
-  - reference: {fileID: 11400000, guid: f223517428eafb74ab15716875781469, type: 2}
-  - reference: {fileID: 11400000, guid: c13a2c0efc550804a9ada5530091b03d, type: 2}
+  - reference: {fileID: 11400000, guid: 661b54e8d8601754bb12d1b014ad2603, type: 2}
+  - reference: {fileID: 11400000, guid: 8a49ff1ebd07fe445b2df8b60543fcfa, type: 2}
   _animatorController: {fileID: 22100000, guid: c4a988b63c6d7fe47bb9e78e4874b8e6, type: 2}

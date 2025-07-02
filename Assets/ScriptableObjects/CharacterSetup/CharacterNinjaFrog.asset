@@ -15,5 +15,5 @@ MonoBehaviour:
   _prefab: {fileID: 6779143174161877438, guid: b5bfe69065726de4fb7277dbb1fcec73, type: 3}
   _characterModel:
   - reference: {fileID: 11400000, guid: f223517428eafb74ab15716875781469, type: 2}
-  - reference: {fileID: 11400000, guid: c13a2c0efc550804a9ada5530091b03d, type: 2}
+  - reference: {fileID: 11400000, guid: ca032993e7d069841a7e57b5d5779ddc, type: 2}
   _animatorController: {fileID: 22100000, guid: 3d2541903ae170d4b94706e606c867a9, type: 2}
