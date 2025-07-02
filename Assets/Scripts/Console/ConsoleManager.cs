@@ -24,16 +24,6 @@ public class ConsoleManager : MonoBehaviour
         _toggleAction.Console.ToggleConsole.performed += ctx => Toggle();
         _toggleAction.Console.Submit.performed += ctx => OnSubmitCommand();
     }
-    
-    private void OnEnable()
-    {
-        _toggleAction.Enable();
-    }
-
-    private void OnDisable()
-    {
-        _toggleAction.Disable();
-    }
 
     public void Toggle() => panel.SetActive(!panel.activeSelf);
 
