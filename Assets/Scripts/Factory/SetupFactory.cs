@@ -11,7 +11,6 @@ public class SetupFactory : ISetupFactory
     public bool TryCreate(IGameObjectSetup config, Vector3 position, Quaternion rotation, out GameObject gameObject, Transform parent = null)
     {
         var result = Object.Instantiate(config.prefab, position, rotation, parent);
-        result.tag = "Character";
         
         foreach (var setupRef in config.setups)
         {
@@ -43,7 +42,7 @@ public class SetupFactory : ISetupFactory
             var animator = result.GetComponentInChildren<Animator>();
             if (!animator)
                 animator = result.AddComponent<Animator>();
-
+            result.tag = "Character";
             animator.runtimeAnimatorController = characterSetup.animatorController;
         }
 
